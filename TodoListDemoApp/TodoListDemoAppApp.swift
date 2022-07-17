@@ -1,17 +1,24 @@
 //
-//  TodoListDemoAppApp.swift
-//  TodoListDemoApp
+//  todo_listApp.swift
+//  todo-list
 //
-//  Created by Aral Muftuoglu on 7/16/22.
+//  Created by Aral Muftuoglu on 7/12/22.
 //
 
 import SwiftUI
 
 @main
-struct TodoListDemoAppApp: App {
+struct todo_listApp: App {
+    
+    @StateObject var taskList : TaskList = TaskList()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(taskList)
+            
         }
     }
 }
